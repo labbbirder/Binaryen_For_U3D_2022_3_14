@@ -16,6 +16,14 @@ tl;dr ：此目录用于解决上述问题，见[步骤](#修复步骤)。
 
 IOS14.4在测试时必现`abort(0)`报错，经修改framework.js，增加调试信息后，定位到更有价值的错误信息：`invalid opcode 196`。
 
+以下同理：
+
+* invalid opcode 192
+* invalid opcode 193
+* invalid opcode 194
+* invalid opcode 195
+* invalid opcode 196
+
 ![wasm opcode table](docs/wasm-opcodes.png)
 
 经查询196号指令为`i64.extend32_s`，隶属于sign-extesnion operators扩展指令集，此指令集最初是一个proposal，并不在标准(MVP features)中。
